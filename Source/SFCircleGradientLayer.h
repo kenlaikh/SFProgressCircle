@@ -29,8 +29,8 @@
 @interface SFCircleGradientLayer : CALayer
 
 @property (nonatomic) CGFloat progress;
-@property (nonatomic) UIColor *startColor;
-@property (nonatomic) UIColor *endColor;
+@property (nonatomic) NSArray *barColors;
+@property (nonatomic) NSArray *barPositions;
 @property (nonatomic) CGFloat startAngle;
 @property (nonatomic) CGFloat endAngle;
 @property (nonatomic) int numSegments;

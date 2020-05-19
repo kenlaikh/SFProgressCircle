@@ -32,13 +32,12 @@ IB_DESIGNABLE
 
 @property (nonatomic) IBInspectable CGFloat progress;
 @property (nonatomic) IBInspectable CGFloat lineWidth;
-@property (nonatomic) IBInspectable UIColor *startColor;
-@property (nonatomic) IBInspectable UIColor *endColor;
+@property (nonatomic) NSArray *barColors;
+@property (nonatomic) NSArray *barPositions;
+@property (nonatomic) NSArray *rimColors;
+@property (nonatomic) NSArray *rimPositions;
 @property (nonatomic) IBInspectable CGFloat startAngle;
 @property (nonatomic) IBInspectable CGFloat endAngle;
 @property (nonatomic) IBInspectable BOOL roundedCorners;
-
-- (void)setProgress:(CGFloat)progress animateWithDuration:(NSTimeInterval)duration;
-- (void)abortAnimation;
 
 @end
