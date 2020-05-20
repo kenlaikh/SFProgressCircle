@@ -86,6 +86,7 @@
 {
   _gradientLayer.progress = progress;
   _rimLayer.progress = 1.0;
+  _rimLayer.startAngle = -M_PI_2 + 2 * M_PI * progress;
 }
 
 - (void)setLineWidth:(CGFloat)value

@@ -39,7 +39,7 @@
   
   NSArray *rimColors = [NSArray arrayWithObjects:[UIColor colorWithRed:33/255.0 green:34/255.0 blue:41/255.0 alpha:1], [UIColor colorWithRed:48/255.0 green:49/255.0 blue:59/255.0 alpha:1], nil];
   
-  NSArray *rimPositions = [NSArray arrayWithObjects:@(0.75), @(1), nil];
+  NSArray *rimPositions = [NSArray arrayWithObjects:@(0), @(1), nil];
   
   [_progressView setRimColors:rimColors];
   [_progressView setRimPositions:rimPositions];
