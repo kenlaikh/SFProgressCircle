@@ -41,6 +41,7 @@
   if (self = [super initWithLayer:param])  {
     SFCircleGradientLayer *layer = (SFCircleGradientLayer*)param;
     self.progress = layer.progress;
+    self.maxProgress = layer.maxProgress;
     self.barColors = layer.barColors;
     self.barPositions = layer.barPositions;
     self.startAngle = layer.startAngle;
@@ -73,7 +74,13 @@
 
 - (void)setProgress:(CGFloat)progress
 {
-  _progress = MAX(0, MIN(1, progress));
+  _progress = MAX(0, progress);
+  [self setNeedsDisplay];
+}
+
+- (void)setMaxProgress:(CGFloat)maxProgress
+{
+  _maxProgress = MAX(0, maxProgress);
   [self setNeedsDisplay];
 }
 
@@ -94,6 +101,9 @@
   if ([key isEqualToString:@"progress"]) {
     return YES;
   }
+  if ([key isEqualToString:@"maxProgress"]) {
+    return YES;
+  }
   return [super needsDisplayForKey:key];
 }
 
@@ -105,7 +115,7 @@
 
 - (void)drawWithSegmentNumber:(int)segmentCount context:(CGContextRef)ctx
 {
-  CGFloat durationAngle = (self.endAngle - self.startAngle) * self.progress;
+  CGFloat durationAngle = (self.endAngle - self.startAngle) * (self.progress / self.maxProgress);
   if (_circleRadius * durationAngle < 0.001) {
     return;
   }

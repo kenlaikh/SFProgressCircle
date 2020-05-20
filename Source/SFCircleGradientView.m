@@ -79,14 +79,24 @@
   [self updateLayerData:frame];
   
   self.progress = 1;
+  self.maxProgress = 1;
   self.lineWidth = 3;
 }
 
 - (void)setProgress:(CGFloat)progress
 {
+  _progress = progress;
   _gradientLayer.progress = progress;
   _rimLayer.progress = 1.0;
-  _rimLayer.startAngle = -M_PI_2 + 2 * M_PI * progress;
+  _rimLayer.startAngle = -M_PI_2 + 2 * M_PI * (progress / self.maxProgress);
+}
+
+- (void)setMaxProgress:(CGFloat)maxProgress
+{
+  _maxProgress = maxProgress;
+  _gradientLayer.maxProgress = maxProgress;
+  _rimLayer.maxProgress = 1.0;
+  _rimLayer.startAngle = -M_PI_2 + 2 * M_PI * (self.progress / maxProgress);
 }
 
 - (void)setLineWidth:(CGFloat)value

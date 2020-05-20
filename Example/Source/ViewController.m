@@ -28,7 +28,8 @@
   _progressView = [[SFCircleGradientView alloc] initWithFrame:(CGRect){0, 0, 200, 200}];
   [_progressView setCenter:self.view.center];
   [_progressView setLineWidth:10];
-  [_progressView setProgress:0.75];
+  [_progressView setProgress:75];
+  [_progressView setMaxProgress:100];
   [_progressView setRoundedCorners:YES];
   NSArray *barColors = [NSArray arrayWithObjects:[UIColor colorWithRed:46/255.0 green:49/255.0 blue:146/255.0 alpha:1], [UIColor colorWithRed:102/255.0 green:45/255.0 blue:145/255.0 alpha:1], [UIColor colorWithRed:190/255.0 green:129/255.0 blue:239/255.0 alpha:1], nil];
   

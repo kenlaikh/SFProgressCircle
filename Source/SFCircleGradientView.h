@@ -31,6 +31,7 @@ IB_DESIGNABLE
 @interface SFCircleGradientView : UIView
 
 @property (nonatomic) IBInspectable CGFloat progress;
+@property (nonatomic) IBInspectable CGFloat maxProgress;
 @property (nonatomic) IBInspectable CGFloat lineWidth;
 @property (nonatomic) NSArray *barColors;
 @property (nonatomic) NSArray *barPositions;
