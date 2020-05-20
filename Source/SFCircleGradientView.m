@@ -152,7 +152,7 @@
 
 - (void)updateLayerData:(CGRect)frame
 {
-  int numSegments = 16;
+  int numSegments = 64;
   CGFloat circleRadius = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame))/2;
   CGFloat circleWidth = _lineWidth;
   
